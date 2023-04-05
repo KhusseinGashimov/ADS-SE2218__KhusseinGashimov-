@@ -60,9 +60,16 @@ import java.util.Scanner;
             else
                 return !Character.isDigit(s.charAt(0))?false:isStr(s.substring(1));
         }
+        static int bin(int n, int k){
+            if(k==0 || k==n)
+                return 1;
+            else
+                return bin(n-1,k-1)+bin(n-1,k);
+        }
         public static void main(String[] args) {
             Scanner sc = new Scanner(System.in);
-            String s = sc.next();
-            System.out.println(isStr(s));
+            int n = sc.nextInt();
+            int k = sc.nextInt();
+            System.out.println(bin(n,k));
         }
     }
