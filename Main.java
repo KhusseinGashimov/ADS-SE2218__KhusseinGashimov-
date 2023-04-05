@@ -54,13 +54,15 @@ import java.util.Scanner;
             else
                 return ans+=nums[n-1]+" "+ reverse(n-1,nums);
         }
+        static boolean isStr(String s){
+            if(s.isEmpty())
+                return true;
+            else
+                return !Character.isDigit(s.charAt(0))?false:isStr(s.substring(1));
+        }
         public static void main(String[] args) {
             Scanner sc = new Scanner(System.in);
-            int n=sc.nextInt();
-            int nums[]=new int[n];
-            for (int i = 0; i < n; i++) {
-                nums[i]=sc.nextInt();
-            }
-            System.out.println(reverse(n,nums));
+            String s = sc.next();
+            System.out.println(isStr(s));
         }
     }
