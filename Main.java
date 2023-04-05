@@ -66,10 +66,13 @@ import java.util.Scanner;
             else
                 return bin(n-1,k-1)+bin(n-1,k);
         }
+        static int gcd(int a, int b) {
+            return b==0 ? a : gcd(b,a%b);
+        }
         public static void main(String[] args) {
             Scanner sc = new Scanner(System.in);
-            int n = sc.nextInt();
-            int k = sc.nextInt();
-            System.out.println(bin(n,k));
+            int a=sc.nextInt();
+            int b=sc.nextInt();
+            System.out.println(gcd(a,b));
         }
     }
