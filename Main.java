@@ -47,10 +47,20 @@ import java.util.Scanner;
             else
                 return answer=a*twice(2,b-1);
         }
+        static String reverse(int n, int[] nums){
+            String ans = "";
+            if(n==0)
+                return ans;
+            else
+                return ans+=nums[n-1]+" "+ reverse(n-1,nums);
+        }
         public static void main(String[] args) {
             Scanner sc = new Scanner(System.in);
             int n=sc.nextInt();
-            int a=sc.nextInt();
-            System.out.println(twice(n,a));
+            int nums[]=new int[n];
+            for (int i = 0; i < n; i++) {
+                nums[i]=sc.nextInt();
+            }
+            System.out.println(reverse(n,nums));
         }
     }
